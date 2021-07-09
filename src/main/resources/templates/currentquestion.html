@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Current Question</title>
+</head>
+<body>
+
+
+
+        <a>So oft wurde die Frage richtig beantwortet:</a>
+        <a th:text="${currentquestion.rightCounter}"></a>
+<br>
+        <h1 th:text="${currentquestion.question}"></h1>
+<br>
+
+
+    <form th:action="@{/question/{id}/increase(id = ${currentquestion.id})}" th:object="${answer}"}>
+    <select th:field="*{ans}">
+        <option th:value="${currentquestion.an1}" th:text="${currentquestion.an1}"></option>
+        <option th:value="${currentquestion.an2}" th:text="${currentquestion.an2}"></option>
+        <option th:value="${currentquestion.an3}" th:text="${currentquestion.an3}"></option>
+        <option th:value="${currentquestion.an4}" th:text="${currentquestion.an4}"></option>
+    </select>
+        <br>
+        <button class="button is-link" type="submit">Überprüfen</button>
+    </form>
+
+        <br>
+        <br>
+
+    <a href="/">Zurück</a>
+
+</body>
+</html>

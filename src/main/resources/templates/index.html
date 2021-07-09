@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Teste dein IT Wissen!</title>
+</head>
+<body>
+<h1>Willkommen zum IT Fragenquiz!</h1>
+
+<p>.....</p>
+
+<ul>
+    <li th:each="question : ${questionList}">
+        <p>So oft wurde die Frage richtig beantwortet: <p th:text="${question.rightCounter}"></p></p>
+        <a th:href="@{/question/{id}(id = ${question.id})}"><p th:text="${question.question}"></p></a>
+
+
+    </li>
+</ul>
+
+
+</body>
+</html>
